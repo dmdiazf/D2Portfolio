@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Esta es la pagina principal del Blog.</h1>
+    <pre>Esta es la primera pagina que se carga del modulo blog. </pre>
+    <p>La pagina se carga desde la carpeta templates.</p>
+    <br/><br/>
+    <p><span style="font-weight: bolder;">Name: </span>{{ name }}</p>
+    <p><span style="font-weight: bolder;">Years: </span>{{ years }}</p>
+    <p><span style="font-weight: bolder;">Codes: </span>
+        <ul>
+            {% for lang in codes %}
+                <li>{{ lang }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+    
+</body>
+</html>
