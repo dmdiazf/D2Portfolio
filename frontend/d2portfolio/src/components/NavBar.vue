@@ -1,5 +1,14 @@
 <script setup>
     import { RouterLink } from 'vue-router';
+    const navigation = [
+      { id: 1, name:'Home', src:'/' },
+      { id: 2, name:'About', src:'/about' },
+      { id: 3, name:'Dashboard', src:'/dashboard' },
+      { id: 4, name:'Team', src:'/team' },
+      { id: 5, name:'Projects', src:'/projects' },
+      { id: 6, name:'Calendar', src:'/calendar' },
+      { id: 7, name:'Blog', src:'/blog' }
+    ];
 </script>
 
 <template>
@@ -37,16 +46,7 @@
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <router-link to="/" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">Home</router-link>
-            <router-link to="/about" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</router-link>
-            
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
-
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
-
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
-
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
+            <router-link v-for="link in navigation" :key="link.id" :to="link.src" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">{{ link.name }}</router-link>
           </div>
         </div>
       </div>
